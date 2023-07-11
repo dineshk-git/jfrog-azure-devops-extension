@@ -1,0 +1,20 @@
+- task: JFrogGenericArtifacts@1
+  inputs:
+    command: 'Upload'
+    connection: 'dineshkp'
+    specSource: 'taskConfiguration'
+    fileSpec: |
+      {
+        "files": [
+          {
+            "pattern": "dinesh-docker-local1/",
+            "target": "dinesh-docker-local2/"
+          }
+        ]
+      }
+    collectBuildInfo: true
+    buildName: '$(Build.DefinitionName)'
+    buildNumber: '$(Build.BuildNumber)'
+    projectKey: 'proj'
+    includeEnvVars: true
+    failNoOp: true
